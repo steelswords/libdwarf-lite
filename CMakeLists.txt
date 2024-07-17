@@ -256,6 +256,7 @@ else()
 endif()
 
 include(GNUInstallDirs)
+set (CMAKE_INSTALL_INCLUDEDIR ${CMAKE_INSTALL_INCLUDEDIR}/dwarf)
 
 add_subdirectory(src/lib/libdwarf)
 add_subdirectory(doc)
@@ -278,7 +279,8 @@ if (DO_TESTING)
   add_subdirectory(test)
 endif()
 
-message(STATUS "Install prefix ... ${CMAKE_INSTALL_PREFIX}" )
+message(STATUS "Libdwarf Install prefix ... ${CMAKE_INSTALL_PREFIX}" )
+message(STATUS "Libdwarf Header Install prefix ... ${CMAKE_INSTALL_INCLUDEDIR}" )
 # installation of libdwarf[p] has to be in
 # src/lib/libdwarf[p]/CMakeLists.txt
 # so that it works properly for cmake before cmake 3.13.
